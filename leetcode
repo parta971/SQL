@@ -7,3 +7,13 @@ select a.firstname,a.lastname,city,state
 from person a
 left join address b
 on a.personid=b.personid
+
+--classes more than 5 students
+select class from courses 
+group by class
+having count(distinct student)>=5
+
+--rising temprature
+select a.id from weather a where a.temperature >
+(select b.temperature from weather b where datediff(day,b.recorddate,a.recorddate)
+=1 )
