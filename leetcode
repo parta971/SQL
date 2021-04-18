@@ -1,3 +1,9 @@
 --second highest salary
 select isnull(max(salary),null) SecondHighestSalary from employee
 where salary<(select max(salary) from employee)
+
+--combin 2 tbles
+select a.firstname,a.lastname,city,state
+from person a
+left join address b
+on a.personid=b.personid
