@@ -1,3 +1,5 @@
 --TO GENERATE OTP IN SQL
 
 select left(rand()*1000000,4) as otp
+or
+select cast(rand()*10000 as int) as otp
